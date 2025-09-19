@@ -8,6 +8,7 @@ export default defineConfig({
   define: {
     'process.env': process.env,
     global: 'globalThis',
+    'process.platform': '"browser"',
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
@@ -20,6 +21,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      moment: 'moment/moment.js',
     },
   },
 });

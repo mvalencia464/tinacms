@@ -10,22 +10,14 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    if (currentView === 'blog') {
-      // Navigate to home first, then scroll to section
-      onNavigate?.('home');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      // Already on home page, just scroll
+    // Navigate to home page and scroll to section
+    window.location.href = `/#${sectionId}`;
+    setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }
+    }, 100);
     setIsMenuOpen(false);
   };
 
@@ -35,8 +27,8 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <button
-              onClick={() => onNavigate?.('home')}
+            <a
+              href="/"
               className="flex items-center hover:opacity-80 transition-opacity"
             >
               <img 
@@ -44,7 +36,7 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
                 alt="Wilkins Carpet Cleaning Logo" 
                 className="h-12 w-auto"
               />
-            </button>
+            </a>
           </div>
 
           {/* Navigation - Desktop */}
@@ -74,7 +66,7 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
               Contact
             </button>
             <button
-              onClick={() => onNavigate?.('blog')}
+              onClick={() => window.location.href = '/blog'}
               className="text-white hover:text-blue-300 font-medium transition-colors"
             >
               Why Wilkins?
@@ -132,7 +124,7 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
                 Contact
               </button>
               <button
-                onClick={() => onNavigate?.('blog')}
+                onClick={() => window.location.href = '/blog'}
                 className="block w-full text-left px-3 py-2 text-white hover:text-blue-200 font-medium"
               >
                 Why Wilkins?
