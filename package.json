@@ -5,20 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:tina": "tinacms dev -c \"npm run dev\"",
     "build": "vite build",
-    "build:tina": "tinacms build && npm run build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "tina:init": "tinacms init"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
-    "@tinacms/cli": "^1.10.3",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tinacms": "^2.8.3"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

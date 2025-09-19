@@ -3,42 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wilkins Carpet Cleaning - Content Management</title>
+    <title>Wilkins Carpet Cleaning - Admin</title>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        background: white;
+        padding: 3rem;
+        border-radius: 1rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        max-width: 500px;
+        margin: 2rem;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 2rem;
+        background: #1e40af;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      h1 {
+        color: #1e40af;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+      p {
+        color: #6b7280;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+      .status {
+        background: #f3f4f6;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        border-left: 4px solid #10b981;
+      }
+      .status h3 {
+        color: #10b981;
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+      }
+      .status p {
+        margin: 0;
+        color: #374151;
+        font-size: 0.9rem;
+      }
+      .btn {
+        display: inline-block;
+        background: #1e40af;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.2s;
+        margin: 0.5rem;
+      }
+      .btn:hover {
+        background: #1d4ed8;
+      }
+      .btn-secondary {
+        background: #6b7280;
+      }
+      .btn-secondary:hover {
+        background: #4b5563;
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2rem 0;
+        text-align: left;
+      }
+      .info-item {
+        background: #f9fafb;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #e5e7eb;
+      }
+      .info-item strong {
+        color: #1e40af;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .info-item span {
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+      @media (max-width: 640px) {
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+        .container {
+          margin: 1rem;
+          padding: 2rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module">
-      // Check if we have Tina credentials
-      const clientId = 'c9fff711-164b-43f5-af6d-d819d11bea2d';
-      // Token should not be exposed client-side, so we just check for clientId
+    <div class="container">
+      <div class="logo">WCC</div>
       
-      if (!clientId) {
-        // Redirect to main site if no valid credentials
-        window.location.href = '/';
-      } else {
-        // Show loading message while we redirect to Tina Cloud
-        document.getElementById('root').innerHTML = `
-          <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui, sans-serif;">
-            <div style="text-align: center; padding: 2rem;">
-              <h1 style="color: #2563eb; margin-bottom: 1rem;">Wilkins Carpet Cleaning CMS</h1>
-              <p style="color: #6b7280; margin-bottom: 2rem;">Redirecting to Tina Cloud...</p>
-              <div style="display: inline-block; width: 2rem; height: 2rem; border: 3px solid #e5e7eb; border-top: 3px solid #2563eb; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-            </div>
-          </div>
-          <style>
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        `;
-        
-        // Redirect to Tina Cloud admin
-        setTimeout(() => {
-          window.location.href = `https://app.tina.io/projects/${clientId}`;
-        }, 2000);
-      }
-    </script>
+      <h1>Wilkins Carpet Cleaning</h1>
+      <p>Content Management System</p>
+
+      <div class="status">
+        <h3>✅ Website Status: Live</h3>
+        <p>Your website is successfully deployed and running</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Live Website</strong>
+          <span>Public website is accessible</span>
+        </div>
+        <div class="info-item">
+          <strong>Content Updates</strong>
+          <span>Direct file editing available</span>
+        </div>
+        <div class="info-item">
+          <strong>Phone Number</strong>
+          <span>(252) 937-3276</span>
+        </div>
+        <div class="info-item">
+          <strong>Service Areas</strong>
+          <span>Rocky Mount, Wilson, Tarboro</span>
+        </div>
+      </div>
+
+      <div style="margin: 2rem 0;">
+        <a href="/" class="btn">← Back to Website</a>
+        <a href="mailto:support@bolt.new" class="btn btn-secondary">Contact Support</a>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 0.8rem; color: #9ca3af;">
+          <strong>Note:</strong> For content updates, please contact your developer or use the file editing features in your hosting dashboard.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
