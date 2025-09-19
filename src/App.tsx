@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { TinaEditProvider } from 'tinacms/dist/edit-state';
+import { TinaEditProvider } from 'tinacms';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
