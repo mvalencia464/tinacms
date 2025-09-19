@@ -14,6 +14,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
     "@tanstack/react-query": "^5.89.0",
+    "@tinacms/app": "^2.3.3",
     "@tinacms/cli": "^1.10.3",
     "@tinacms/datalayer": "^1.4.1",
     "lucide-react": "^0.344.0",
