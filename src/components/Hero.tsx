@@ -82,7 +82,7 @@ const Hero = () => {
               {/* Large Logo Watermark */}
               <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
                 <img 
-                  src="/wilkins-logo.webp" 
+                  src="/logo.svg" 
                   alt="Wilkins Carpet Cleaning Logo Watermark" 
                   className="w-64 h-64 object-contain"
                 />
@@ -91,7 +91,7 @@ const Hero = () => {
               {/* Corner Logo */}
               <div className="absolute top-4 right-4">
                 <img 
-                  src="/wilkins-logo.webp" 
+                  src="/logo.svg" 
                   alt="Wilkins Carpet Cleaning Logo" 
                   className="w-16 h-16 object-contain opacity-80"
                 />

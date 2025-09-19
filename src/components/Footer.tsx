@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-2 space-y-6">
             <div className="flex items-center">
               <img 
-                src="/wilkins-logo.webp" 
+                src="/logo.svg" 
                 alt="Wilkins Carpet Cleaning Logo" 
                 className="h-10 w-auto mr-3"
               />

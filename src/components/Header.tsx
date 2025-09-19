@@ -40,9 +40,9 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
               className="flex items-center hover:opacity-80 transition-opacity"
             >
               <img 
-                src="/wilkins-logo.webp" 
+                src="/logo.svg" 
                 alt="Wilkins Carpet Cleaning Logo" 
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
             </button>
           </div>
