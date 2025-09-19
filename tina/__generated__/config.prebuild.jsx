@@ -1,29 +1,21 @@
+// tina/config.ts
 import { defineConfig } from "tinacms";
-
-// Your hosting provider likely exposes this as an environment variable
-const branch = import.meta.env.VITE_GITHUB_BRANCH || 
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
-
-export default defineConfig({
+var branch = import.meta.env.VITE_GITHUB_BRANCH || process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+var config_default = defineConfig({
   branch,
-
   // Get this from tina.io
   clientId: import.meta.env.VITE_TINA_CLIENT_ID,
   // Get this from tina.io
   token: import.meta.env.VITE_TINA_TOKEN,
-
   build: {
     outputFolder: "admin",
-    publicFolder: "public",
+    publicFolder: "public"
   },
   media: {
     tina: {
       mediaRoot: "uploads",
-      publicFolder: "public",
-    },
+      publicFolder: "public"
+    }
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
@@ -39,20 +31,20 @@ export default defineConfig({
             name: "title",
             label: "Title",
             isTitle: true,
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "description",
-            label: "Description",
+            label: "Description"
           },
           {
             type: "rich-text",
             name: "body",
             label: "Body",
-            isBody: true,
-          },
-        ],
+            isBody: true
+          }
+        ]
       },
       {
         name: "hero",
@@ -62,30 +54,30 @@ export default defineConfig({
         ui: {
           allowedActions: {
             create: false,
-            delete: false,
-          },
+            delete: false
+          }
         },
         fields: [
           {
             type: "string",
             name: "title",
-            label: "Main Title",
+            label: "Main Title"
           },
           {
             type: "string",
             name: "subtitle",
-            label: "Subtitle",
+            label: "Subtitle"
           },
           {
             type: "image",
             name: "heroImage",
-            label: "Hero Image",
+            label: "Hero Image"
           },
           {
             type: "string",
             name: "phoneNumber",
             label: "Phone Number",
-            required: true,
+            required: true
           },
           {
             type: "object",
@@ -96,15 +88,15 @@ export default defineConfig({
                 type: "number",
                 name: "stars",
                 label: "Star Rating",
-                required: true,
+                required: true
               },
               {
                 type: "string",
                 name: "reviewCount",
                 label: "Review Count",
-                required: true,
-              },
-            ],
+                required: true
+              }
+            ]
           },
           {
             type: "object",
@@ -116,17 +108,17 @@ export default defineConfig({
                 type: "string",
                 name: "benefit",
                 label: "Benefit",
-                required: true,
-              },
-            ],
+                required: true
+              }
+            ]
           },
           {
             type: "string",
             name: "serviceAreas",
             label: "Service Areas",
-            required: true,
-          },
-        ],
+            required: true
+          }
+        ]
       },
       {
         name: "services",
@@ -138,26 +130,26 @@ export default defineConfig({
             type: "string",
             name: "title",
             label: "Service Title",
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "description",
             label: "Service Description",
-            required: true,
+            required: true
           },
           {
             type: "image",
             name: "image",
-            label: "Service Image",
+            label: "Service Image"
           },
           {
             type: "string",
             name: "icon",
             label: "Icon Name (Lucide React)",
-            required: true,
-          },
-        ],
+            required: true
+          }
+        ]
       },
       {
         name: "testimonials",
@@ -169,28 +161,28 @@ export default defineConfig({
             type: "string",
             name: "name",
             label: "Customer Name",
-            required: true,
+            required: true
           },
           {
             type: "number",
             name: "rating",
             label: "Rating (1-5)",
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "text",
             label: "Testimonial Text",
             ui: {
-              component: "textarea",
+              component: "textarea"
             },
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "timeAgo",
             label: "Time Ago",
-            required: true,
+            required: true
           },
           {
             type: "object",
@@ -200,26 +192,26 @@ export default defineConfig({
               {
                 type: "boolean",
                 name: "beforeAfter",
-                label: "Before & After",
+                label: "Before & After"
               },
               {
                 type: "boolean",
                 name: "commercial",
-                label: "Commercial",
+                label: "Commercial"
               },
               {
                 type: "boolean",
                 name: "aboveAndBeyond",
-                label: "Above & Beyond",
+                label: "Above & Beyond"
               },
               {
                 type: "boolean",
                 name: "savedMoney",
-                label: "Saved Money",
-              },
-            ],
-          },
-        ],
+                label: "Saved Money"
+              }
+            ]
+          }
+        ]
       },
       {
         name: "contact",
@@ -229,21 +221,21 @@ export default defineConfig({
         ui: {
           allowedActions: {
             create: false,
-            delete: false,
-          },
+            delete: false
+          }
         },
         fields: [
           {
             type: "string",
             name: "phoneNumber",
             label: "Phone Number",
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "email",
             label: "Email Address",
-            required: true,
+            required: true
           },
           {
             type: "object",
@@ -254,39 +246,42 @@ export default defineConfig({
                 type: "string",
                 name: "street",
                 label: "Street Address",
-                required: true,
+                required: true
               },
               {
                 type: "string",
                 name: "city",
                 label: "City",
-                required: true,
+                required: true
               },
               {
                 type: "string",
                 name: "state",
                 label: "State",
-                required: true,
+                required: true
               },
               {
                 type: "string",
                 name: "zipCode",
                 label: "ZIP Code",
-                required: true,
-              },
-            ],
+                required: true
+              }
+            ]
           },
           {
             type: "string",
             name: "serviceAreas",
             label: "Service Areas",
             ui: {
-              component: "textarea",
+              component: "textarea"
             },
-            required: true,
-          },
-        ],
-      },
-    ],
-  },
+            required: true
+          }
+        ]
+      }
+    ]
+  }
 });
+export {
+  config_default as default
+};
