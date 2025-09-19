@@ -11,9 +11,9 @@
     <script type="module">
       // Check if we have Tina credentials
       const clientId = 'c9fff711-164b-43f5-af6d-d819d11bea2d';
-      const token = 'a7bc9a68659462273cf971e007819b1dd3f6a44d';
+      // Token should not be exposed client-side, so we just check for clientId
       
-      if (!clientId || clientId === 'your_client_id_here') {
+      if (!clientId) {
         // Redirect to main site if no valid credentials
         window.location.href = '/';
       } else {

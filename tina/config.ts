@@ -1,19 +1,19 @@
 import { defineConfig } from "tinacms";
 
-// Your hosting provider likely exposes this as an environment variable
-const branch = import.meta.env.VITE_GITHUB_BRANCH || 
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
+// Use server-side environment variables for branch and token
+const branch = process.env.GITHUB_BRANCH || 
+  process.env.VERCEL_GIT_COMMIT_REF || 
   "main";
+
+const token = process.env.TINA_TOKEN;
 
 export default defineConfig({
   branch,
 
-  // Get this from tina.io
+  // Client ID can be public (VITE_ prefix)
   clientId: import.meta.env.VITE_TINA_CLIENT_ID,
-  // Get this from tina.io
-  token: import.meta.env.VITE_TINA_TOKEN,
+  // Token must be server-side only (no VITE_ prefix for security)
+  token,
 
   build: {
     outputFolder: "admin",
