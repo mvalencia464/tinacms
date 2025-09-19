@@ -40,7 +40,7 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
               className="flex items-center hover:opacity-80 transition-opacity"
             >
               <img 
-                src="/logo.svg" 
+                src="https://storage.googleapis.com/msgsndr/L5t2LlW1L90yYr78gOVn/media/68ccef9b253906723304b2ae.webp" 
                 alt="Wilkins Carpet Cleaning Logo" 
                 className="h-12 w-auto"
               />
