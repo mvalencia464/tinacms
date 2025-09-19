@@ -9,16 +9,35 @@
   <body>
     <div id="root"></div>
     <script type="module">
-      import { TinaCMS } from 'tinacms'
+      // Check if we have Tina credentials
+      const clientId = 'e44a616a-c259-479c-96f6-ed4a5462d467';
+      const token = '3e56d7689315449b346f4c476fb97a01c951e02e';
       
-      const cms = new TinaCMS({
-        enabled: true,
-        sidebar: true,
-      })
-      
-      // Redirect to main site if no credentials
-      if (!import.meta.env.VITE_TINA_CLIENT_ID) {
-        window.location.href = '/'
+      if (!clientId || clientId === 'your_client_id_here') {
+        // Redirect to main site if no valid credentials
+        window.location.href = '/';
+      } else {
+        // Show loading message while we redirect to Tina Cloud
+        document.getElementById('root').innerHTML = `
+          <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui, sans-serif;">
+            <div style="text-align: center; padding: 2rem;">
+              <h1 style="color: #2563eb; margin-bottom: 1rem;">Wilkins Carpet Cleaning CMS</h1>
+              <p style="color: #6b7280; margin-bottom: 2rem;">Redirecting to Tina Cloud...</p>
+              <div style="display: inline-block; width: 2rem; height: 2rem; border: 3px solid #e5e7eb; border-top: 3px solid #2563eb; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            </div>
+          </div>
+          <style>
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+        `;
+        
+        // Redirect to Tina Cloud admin
+        setTimeout(() => {
+          window.location.href = `https://app.tina.io/projects/${clientId}`;
+        }, 2000);
       }
     </script>
   </body>
