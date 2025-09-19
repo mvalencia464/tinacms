@@ -24,4 +24,9 @@ export default defineConfig({
       moment: 'moment/moment.js',
     },
   },
+  build: {
+    rollupOptions: {
+      external: ['tinacms/dist/edit-state']
+    }
+  }
 });
